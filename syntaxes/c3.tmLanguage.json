@@ -8,8 +8,7 @@
 		{ "include": "#numbers"     },
 		{ "include": "#types"       },
 		{ "include": "#support"     },
-		{ "include": "#operators"   },
-		{ "include": "#identifiers" }
+		{ "include": "#operators"   }
 	],
 	"repository": {
 		"keywords": {
