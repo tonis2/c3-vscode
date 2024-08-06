@@ -16,6 +16,9 @@ const config = workspace.getConfiguration('c3lspclient.lsp');
 
 export function activate(context) {
 	let executable = config.get('path');
+	let enabled = config.get('enable');
+
+	if (enabled == false) return;
 
 	if (!executable) {
 		switch(os.platform()) {

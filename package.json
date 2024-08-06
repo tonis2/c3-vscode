@@ -2,7 +2,7 @@
 	"name": "c3-vscode",
 	"displayName": "C3",
 	"description": "C3 language server",
-	"version": "0.0.71",
+	"version": "0.0.81",
 	"publisher": "tonios2",
 	"activationEvents": [
 		"onLanguage:c3"
@@ -41,7 +41,7 @@
 			"properties": {
 				"c3.lsp.enable": {
 					"type": "boolean",
-					"default": false,
+					"default": true,
 					"description": "Enables the language server"
 				},
 				"c3.lsp.path": {
