@@ -2,7 +2,7 @@
 	"name": "c3-vscode",
 	"displayName": "C3",
 	"description": "C3 language server",
-	"version": "0.0.82",
+	"version": "0.0.83",
 	"publisher": "tonios2",
 	"activationEvents": [
 		"onLanguage:c3"
@@ -12,7 +12,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pherrymason/c3-lsp.git"
+		"url": "https://github.com/tonis2/c3-vscode"
 	},
 	"contributes": {
 		"languages": [
