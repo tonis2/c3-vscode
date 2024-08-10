@@ -22,9 +22,18 @@ export function activate(context) {
 
 	if (!executable) {
 		switch(os.platform()) {
-			case "win32": binary_path = "c3-lsp-windows"
-			case "darwin": executable = path.join(context.extensionPath, "c3-lsp-macos");
-			case "linux": executable = path.join(context.extensionPath, "c3-lsp-linux");
+			case "win32": {
+				executable = path.join(context.extensionPath, "c3-lsp-windows");
+				break;
+			}
+			case "darwin": {
+				executable = path.join(context.extensionPath, "c3-lsp-macos");
+				break;
+			}
+			case "linux": {
+				executable = path.join(context.extensionPath, "c3-lsp-linux");
+				break;
+			}
 		}
 	}
 	// If the extension is launched in debug mode then the debug server options are used
@@ -37,11 +46,11 @@ export function activate(context) {
 	}
 
     if (config.get('log.path').length > 0) {
-        args.push('--log-path '+config.get('log.path'));
+        args.push('--log-path ' + config.get('log.path'));
     }
 
     if (config.get('c3.version')) {
-        args.push('--lang-version '+config.get('c3.version'));
+        args.push('--lang-version '+ config.get('c3.version'));
     }
 
 	const serverOptions = {
