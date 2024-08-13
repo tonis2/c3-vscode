@@ -23,7 +23,7 @@ export function activate(context) {
 	if (!executable) {
 		switch(os.platform()) {
 			case "win32": {
-				executable = path.join(context.extensionPath, "c3-lsp-windows");
+				executable = path.join(context.extensionPath, "c3-lsp-windows.exe");
 				break;
 			}
 			case "darwin": {
