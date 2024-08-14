@@ -2,7 +2,7 @@
 	"name": "c3-vscode",
 	"displayName": "C3",
 	"description": "C3 language server",
-	"version": "0.0.84",
+	"version": "0.0.85",
 	"publisher": "tonios2",
 	"activationEvents": [
 		"onLanguage:c3"
