@@ -1,13 +1,8 @@
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+import { workspace } from 'vscode';
 import { Trace } from 'vscode-jsonrpc';
 
-import {
-	LanguageClient,
-	LanguageClientOptions,
-	ServerOptions,
-	TransportKind
-} from 'vscode-languageclient/node';
+import { LanguageClient } from 'vscode-languageclient/node';
 
 import os from "os";
 
@@ -27,7 +22,7 @@ export function activate(context) {
 				break;
 			}
 			case "darwin": {
-				executable = path.join(context.extensionPath, "c3-lsp-macos");
+				executable = path.join(context.extensionPath, "c3-lsp-darwin");
 				break;
 			}
 			case "linux": {
