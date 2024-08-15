@@ -2,7 +2,7 @@
 	"name": "c3-vscode",
 	"displayName": "C3",
 	"description": "C3 language server",
-	"version": "0.0.85",
+	"version": "0.0.86",
 	"publisher": "tonios2",
 	"activationEvents": [
 		"onLanguage:c3"
@@ -46,7 +46,7 @@
 				},
 				"c3.lsp.path": {
 					"type": "string",
-					"default": "c3-lsp",
+					"default": null,
 					"markdownDescription": "The path to **c3-lsp** binary"
 				},
 				"c3.lsp.debug": {
@@ -61,7 +61,7 @@
 				},
 				"c3lspclient.lsp.log.path": {
 					"type": "string",
-					"default": "",
+					"default": null,
 					"description": "Saves log to specified file"
 				},
 				"c3lspclient.lsp.c3.version": {
