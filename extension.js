@@ -7,11 +7,12 @@ import { LanguageClient } from 'vscode-languageclient/node';
 import os from "os";
 
 let client;
-const config = workspace.getConfiguration('c3lspclient.lsp');
+const c3Config = workspace.getConfiguration('c3.lsp');
+const c3LSPClientConfig = workspace.getConfiguration('c3lspclient.lsp');
 
 export function activate(context) {
-	let executable = config.get('path');
-	let enabled = config.get('enable');
+	let executable = c3LSPClientConfig.get('path');
+	let enabled = c3LSPClientConfig.get('enable');
 
 	if (enabled == false) return;
 
@@ -36,17 +37,21 @@ export function activate(context) {
 
 	let args = [];
 	
-	if (config.get('sendCrashReports')) {
+	if (c3Config.get('sendCrashReports')) {
 		args.push('--send-crash-reports');
 	}
 
-    if (config.get('log.path').length > 0) {
-        args.push('--log-path ' + config.get('log.path'));
+    if (c3Config.get('log.path').length > 0) {
+        args.push('--log-path ' + c3Config.get('log.path'));
     }
 
-    if (config.get('c3.version')) {
-        args.push('--lang-version '+ config.get('c3.version'));
+    if (c3Config.get('c3.version')) {
+        args.push('--lang-version '+ c3Config.get('c3.version'));
     }
+
+	if (c3Config.get('debug')) {
+		args.push('--debug');
+	}
 
 	const serverOptions = {
 		run: {
@@ -64,8 +69,8 @@ export function activate(context) {
 		// Register the server for plain text documents
 		documentSelector: [{ scheme: 'file', language: 'c3' }],
 		synchronize: {
-			// Notify the server about file changes to '.clientrc files contained in the workspace
-			fileEvents: workspace.createFileSystemWatcher('**/.c3')
+			// Notify the server about file changes to '.c3' or '.c3i' files contained in the workspace
+			fileEvents: workspace.createFileSystemWatcher('**/*.{c3,c3i}'),
 		}
 	};
 
