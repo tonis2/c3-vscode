@@ -87,5 +87,8 @@ export function activate(context) {
 }
 
 export function deactivate() {
+	if (!client) {
+		return undefined;
+	}
 	return client.stop();
 }
