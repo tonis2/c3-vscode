@@ -64,8 +64,8 @@ export function activate(context) {
 		// Register the server for plain text documents
 		documentSelector: [{ scheme: 'file', language: 'c3' }],
 		synchronize: {
-			// Notify the server about file changes to '.clientrc files contained in the workspace
-			fileEvents: workspace.createFileSystemWatcher('**/.c3')
+			// Notify the server about file changes to '.c3' or '.c3i' files contained in the workspace
+			fileEvents: workspace.createFileSystemWatcher('**/*.{c3,c3i}'),
 		}
 	};
 
