@@ -41,7 +41,7 @@ export function activate(context) {
 		args.push('--send-crash-reports');
 	}
 
-    if (c3Config.get('log.path').length > 0) {
+    if (c3Config.get('log.path')) {
         args.push('--log-path ' + c3Config.get('log.path'));
     }
 
