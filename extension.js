@@ -78,7 +78,7 @@ export function activate(context) {
 		documentSelector: [{ scheme: 'file', language: 'c3' }],
 		synchronize: {
 			// Notify the server about file changes to '.c3' or '.c3i' files contained in the workspace
-			fileEvents: workspace.createFileSystemWatcher('**/**/**.{c3,c3i}'),
+			fileEvents: workspace.createFileSystemWatcher('**/*.{c3,c3i}'),
 		}
 	};
 
