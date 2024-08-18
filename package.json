@@ -2,11 +2,12 @@
 	"name": "c3-vscode",
 	"displayName": "C3",
 	"description": "C3 language server",
-	"version": "0.0.86",
+	"version": "0.1.0",
 	"publisher": "tonios2",
 	"activationEvents": [
 		"onLanguage:c3"
 	],
+	"icon": "icon.png",
 	"categories": [
 		"Programming Languages"
 	],
@@ -36,6 +37,12 @@
 				"path": "./syntaxes/c3.tmLanguage.json"
 			}
 		],
+		"snippets": [
+            {
+                "language": "c3",
+                "path": "./snippets/snippets.json"
+            }
+        ],
 		"configuration": {
 			"title": "Language Server",
 			"properties": {

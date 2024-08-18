@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { workspace } from 'vscode';
 import { Trace } from 'vscode-jsonrpc';
+import fs from "fs";
 
 import { LanguageClient } from 'vscode-languageclient/node';
 
@@ -15,6 +16,13 @@ export function activate(context) {
 	let enabled = c3LSPClientConfig.get('enable');
 
 	if (enabled == false) return;
+
+	// let project_jsons = [];
+	// for (folder of workspace.workspaceFolders) {
+	// 	fs.readFile(path.join(folder.uri.path,"project.json"), (err, data) => {
+	// 		if(!err) console.log(JSON.parse(data));
+	// 	});
+	// }
 
 	if (!executable) {
 		switch(os.platform()) {
@@ -70,7 +78,7 @@ export function activate(context) {
 		documentSelector: [{ scheme: 'file', language: 'c3' }],
 		synchronize: {
 			// Notify the server about file changes to '.c3' or '.c3i' files contained in the workspace
-			fileEvents: workspace.createFileSystemWatcher('**/*.{c3,c3i}'),
+			fileEvents: workspace.createFileSystemWatcher('**/**/**.{c3,c3i}'),
 		}
 	};
 
