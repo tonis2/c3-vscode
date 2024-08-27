@@ -103,7 +103,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape",
-					"match": "\\\\([nrt'\"\\\\]|(x[0-9a-fA-F]{2})|(u\\{[0-9a-fA-F]+\\}))"
+					"match": "\\\\([0abefnrtv'\"\\\\]|(x[0-9a-fA-F]{2})|(u\\{[0-9a-fA-F]+\\}))"
 				},
 				{
 					"name": "invalid.illegal.unrecognized-string-escape",
