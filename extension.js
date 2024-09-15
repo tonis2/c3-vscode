@@ -25,7 +25,7 @@ export function activate(context) {
 	// }
 
 	if (!executable) {
-		switch(os.platform()) {
+		switch (os.platform()) {
 			case "win32": {
 				executable = path.join(context.extensionPath, "c3-lsp-windows-amd64.exe");
 				break;
@@ -44,30 +44,34 @@ export function activate(context) {
 	// Otherwise the run options are used
 
 	let args = [];
-	
+
 	if (c3Config.get('sendCrashReports')) {
 		args.push('--send-crash-reports');
 	}
 
 	if (c3Config.get('c3.path')) {
-        args.push('--c3c-path=' + c3Config.get('c3.path'));
-    }
+		args.push('--c3c-path=' + c3Config.get('c3.path'));
+	}
 
-    if (c3Config.get('log.path')) {
-        args.push('--log-path=' + c3Config.get('log.path'));
-    }
+	if (c3Config.get('c3.stdlibPath')) {
+		args.push('--stdlib-path=' + c3Config.get('c3.stdlibPath'));
+	}
 
-    if (c3Config.get('c3.version')) {
-        args.push('--lang-version=' + c3Config.get('c3.version'));
-    }
+	if (c3Config.get('log.path')) {
+		args.push('--log-path=' + c3Config.get('log.path'));
+	}
+
+	if (c3Config.get('c3.version')) {
+		args.push('--lang-version=' + c3Config.get('c3.version'));
+	}
 
 	if (c3Config.get('debug')) {
 		args.push('--debug');
 	}
 
 	if (c3Config.get('diagnosticsDelay')) {
-        args.push('--diagnostics-delay=' + c3Config.get('diagnosticsDelay'));
-    }
+		args.push('--diagnostics-delay=' + c3Config.get('diagnosticsDelay'));
+	}
 
 	const serverOptions = {
 		run: {
@@ -75,7 +79,7 @@ export function activate(context) {
 			args: args,
 		},
 		debug: {
-			command:executable,
+			command: executable,
 			args: args,
 			options: { execArgv: ['--nolazy', '--inspect=6009'] }
 		}

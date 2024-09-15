@@ -38,11 +38,11 @@
 			}
 		],
 		"snippets": [
-            {
-                "language": "c3",
-                "path": "./snippets/snippets.json"
-            }
-        ],
+			{
+				"language": "c3",
+				"path": "./snippets/snippets.json"
+			}
+		],
 		"configuration": {
 			"title": "Language Server",
 			"properties": {
@@ -85,6 +85,11 @@
 					"type": "string",
 					"default": null,
 					"markdownDescription": "Path to C3C binary. Use it if not defined already in your PATH environment variable or if you want to use a different one."
+				},
+				"c3lspclient.lsp.c3.stdlibPath": {
+					"type": "string",
+					"default": null,
+					"markdownDescription": "Path to C3C stdlib."
 				}
 			}
 		}
