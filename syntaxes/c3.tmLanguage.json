@@ -96,6 +96,17 @@
 					"patterns": [ {"include": "#stringcontent"} ],
 					"begin": "x'",
 					"end": "'"
+				},
+				{
+					"name": "string.quoted.single",
+					"patterns": [
+						{
+							"name": "constant.character.escape",
+							"match": "`[^`]*?`"
+						}
+					],
+					"begin": "`",
+					"end": "`"
 				}
 			]
 		},
