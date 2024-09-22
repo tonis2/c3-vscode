@@ -37,7 +37,7 @@
 				},
 				{
 					"name": "keyword",
-					"match": "\\b(struct|switch|true|try|union|var|while)\\b"
+					"match": "\\b(struct|interface|switch|true|try|union|var|while)\\b"
 				},
 				{
 					"name": "keyword",
