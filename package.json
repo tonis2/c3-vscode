@@ -54,7 +54,7 @@
 				"c3lspclient.lsp.path": {
 					"type": "string",
 					"default": null,
-					"markdownDescription": "The path to **c3-lsp** binary"
+					"markdownDescription": "The path to **c3lsp** binary"
 				},
 				"c3.lsp.debug": {
 					"type": "boolean",
