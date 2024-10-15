@@ -54,8 +54,8 @@
 				},
 				{
 					"name": "comment.block.c3",
-					"begin": "/\\*",
-					"end": "\\*/"
+					"begin": "<\\*",
+					"end": "\\*>"
 				}
 			]
 		},
